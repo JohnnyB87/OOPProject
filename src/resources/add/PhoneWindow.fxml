@@ -1,0 +1,38 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import classes.PaneFrame?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import classes.ProductPane?>
+<PaneFrame xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controllers.PhoneController"
+           prefHeight="400.0" prefWidth="600.0"
+           style="-fx-background-color: #bcbcbc;"
+           fx:id="paneFrame">
+    <top>
+        <VBox alignment="CENTER" prefHeight="78.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <Label fx:id="titleLabel" text="Add Account" style="-fx-font-size: 30;"/>
+        </VBox>
+    </top>
+    <center>
+        <ProductPane fx:id="superPane" prefHeight="222.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <TextField fx:id="phoneMake" layoutX="194.0" layoutY="90"/>
+            <TextField fx:id="phoneModel" layoutX="194.0" layoutY="120.0"/>
+            <ComboBox fx:id="phoneSizeGB" promptText="GB" layoutX="194.0" layoutY="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="16"/>
+                        <String fx:value="32"/>
+                        <String fx:value="64"/>
+                        <String fx:value="128"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label layoutX="103.0" layoutY="94.0" text="Make: "/>
+            <Label layoutX="103.0" layoutY="124.0" text="Model: "/>
+            <Label layoutX="103.0" layoutY="154.0" text="Storage GB: "/>
+        </ProductPane>
+    </center>
+</PaneFrame>

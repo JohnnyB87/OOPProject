@@ -1,0 +1,49 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import classes.PaneFrame?>
+
+<?import classes.ProductPane?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<PaneFrame xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controllers.TVController"
+           prefHeight="400.0" prefWidth="600.0"
+           style="-fx-background-color: #bcbcbc;"
+           fx:id="paneFrame">
+    <top>
+        <VBox alignment="CENTER" prefHeight="78.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <Label fx:id="titleLabel" text="Add Staff" style="-fx-font-size: 30;"/>
+        </VBox>
+    </top>
+    <center>
+        <ProductPane fx:id="superPane" prefHeight="222.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+            <TextField fx:id="tvMakeTxtFld" layoutX="194.0" layoutY="90"/>
+            <ComboBox fx:id="tvSizeComboBox" promptText="Size" layoutX="194.0" layoutY="120.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="24"/>
+                        <String fx:value="27"/>
+                        <String fx:value="32"/>
+                        <String fx:value="40"/>
+                        <String fx:value="50"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <ComboBox fx:id="tvTypeComboBox" promptText="Type" layoutX="194.0" layoutY="150.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="LCD"/>
+                        <String fx:value="LED"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <CheckBox fx:id="tv3DCheckBox" layoutX="194" layoutY="180"/>
+            <Label layoutX="103.0" layoutY="94.0" text="Make: "/>
+            <Label layoutX="103.0" layoutY="124.0" text="Screen Size: "/>
+            <Label layoutX="103.0" layoutY="154.0" text="Type: "/>
+            <Label layoutX="103.0" layoutY="184.0" text="3D: "/>
+        </ProductPane>
+    </center>
+
+</PaneFrame>
