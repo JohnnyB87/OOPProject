@@ -21,10 +21,6 @@
         <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0">
             <Button fx:id="newPhone" text="Phone" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0"/>
             <Button fx:id="newTV" text="TV" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0"/>
-            <Button fx:id="newCustomer" text="Customer" mnemonicParsing="false" prefHeight="25.0"
-                    prefWidth="75.0"/>
-            <Button fx:id="newAccount" text="Account" mnemonicParsing="false" prefHeight="25.0"
-                    prefWidth="75.0"/>
         </TilePane>
     </VBox>
 </AnchorPane>

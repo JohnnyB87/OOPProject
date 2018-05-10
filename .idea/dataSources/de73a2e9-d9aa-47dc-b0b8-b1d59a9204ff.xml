@@ -921,129 +921,196 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="232" parent="7" name="phone"/>
-    <table id="233" parent="7" name="product"/>
-    <table id="234" parent="7" name="tv"/>
-    <column id="235" parent="232" name="PHno">
+    <table id="232" parent="7" name="customer"/>
+    <table id="233" parent="7" name="customerorder"/>
+    <table id="234" parent="7" name="orderdetail"/>
+    <table id="235" parent="7" name="phone"/>
+    <table id="236" parent="7" name="product"/>
+    <table id="237" parent="7" name="tv"/>
+    <column id="238" parent="232" name="Cno">
       <Position>1</Position>
       <DataType>varchar(5)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="232" name="Pno">
+    <column id="239" parent="232" name="FirstName">
       <Position>2</Position>
-      <DataType>varchar(5)|0s</DataType>
+      <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="232" name="Make">
+    <column id="240" parent="232" name="LastName">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="232" name="Model">
-      <Position>4</Position>
-      <DataType>varchar(20)|0s</DataType>
+    <key id="241" parent="232" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Cno</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="242" parent="233" name="Ono">
+      <Position>1</Position>
+      <DataType>varchar(5)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="232" name="StorageGB">
-      <Position>5</Position>
-      <DataType>int(5)|0s</DataType>
+    <column id="243" parent="233" name="Cno">
+      <Position>2</Position>
+      <DataType>varchar(5)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="244" parent="233" name="Cno">
+      <ColNames>Cno</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="245" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Ono</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="246" parent="233" name="customerorder_ibfk_1">
+      <ColNames>Cno</ColNames>
+      <RefSchemaName>store</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>Cno</RefColNames>
+    </foreign-key>
+    <column id="247" parent="234" name="Ono">
+      <Position>1</Position>
+      <DataType>varchar(5)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="240" parent="232" name="Pno">
+    <column id="248" parent="234" name="Pno">
+      <Position>2</Position>
+      <DataType>varchar(5)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="249" parent="234" name="Quantity">
+      <Position>3</Position>
+      <DataType>int(10)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="250" parent="234" name="Pno">
       <ColNames>Pno</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="241" parent="232" name="PRIMARY">
+    <key id="251" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>PHno</ColNames>
+      <ColNames>Ono
+Pno</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="242" parent="232" name="phone_ibfk_1">
+    <foreign-key id="252" parent="234" name="orderdetail_ibfk_1">
+      <ColNames>Ono</ColNames>
+      <RefSchemaName>store</RefSchemaName>
+      <RefTableName>customerorder</RefTableName>
+      <RefColNames>Ono</RefColNames>
+    </foreign-key>
+    <foreign-key id="253" parent="234" name="orderdetail_ibfk_2">
       <ColNames>Pno</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>product</RefTableName>
       <RefColNames>Pno</RefColNames>
     </foreign-key>
-    <column id="243" parent="233" name="Pno">
+    <column id="254" parent="235" name="Pno">
       <Position>1</Position>
       <DataType>varchar(5)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="233" name="Name">
+    <column id="255" parent="235" name="Make">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="233" name="Descriptioin">
+    <column id="256" parent="235" name="Model">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="233" name="Price">
+    <column id="257" parent="235" name="StorageGB">
+      <Position>4</Position>
+      <DataType>int(5)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="258" parent="235" name="Pno">
+      <ColNames>Pno</ColNames>
+      <Type>btree</Type>
+    </index>
+    <foreign-key id="259" parent="235" name="phone_ibfk_1">
+      <ColNames>Pno</ColNames>
+      <RefSchemaName>store</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>Pno</RefColNames>
+    </foreign-key>
+    <column id="260" parent="236" name="Pno">
+      <Position>1</Position>
+      <DataType>varchar(5)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="261" parent="236" name="Name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="262" parent="236" name="Description">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="263" parent="236" name="Price">
       <Position>4</Position>
       <DataType>double(10,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="247" parent="233" name="PRIMARY">
+    <key id="264" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Pno</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="248" parent="234" name="TVno">
+    <column id="265" parent="237" name="Pno">
       <Position>1</Position>
       <DataType>varchar(5)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="234" name="Pno">
+    <column id="266" parent="237" name="Make">
       <Position>2</Position>
-      <DataType>varchar(5)|0s</DataType>
+      <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="234" name="Make">
+    <column id="267" parent="237" name="Type">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="234" name="Type">
+    <column id="268" parent="237" name="ScreenSize">
       <Position>4</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="252" parent="234" name="ScreenSize">
-      <Position>5</Position>
       <DataType>int(5)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="234" name="3DCapable">
-      <Position>6</Position>
-      <DataType>tinyint(1)|0s</DataType>
+    <column id="269" parent="237" name="3DCapable">
+      <Position>5</Position>
+      <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="254" parent="234" name="Pno">
+    <index id="270" parent="237" name="Pno">
       <ColNames>Pno</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="255" parent="234" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>TVno</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="256" parent="234" name="tv_ibfk_1">
+    <foreign-key id="271" parent="237" name="tv_ibfk_1">
       <ColNames>Pno</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>product</RefTableName>

@@ -20,14 +20,16 @@
     </VBox>
     <VBox alignment="CENTER" layoutX="1.0" layoutY="75.0" prefHeight="300.0" prefWidth="400.0">
         <TilePane alignment="CENTER" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" vgap="10.0">
-            <Button fx:id="addButton" text="Add" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0"
+            <Button fx:id="addButton" text="Add" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0"
                     onAction="#buttonPressed"/>
             <Button fx:id="deleteButton" text="Delete" mnemonicParsing="false" prefHeight="25.0"
-                    prefWidth="75.0" onAction="#buttonPressed"/>
-            <Button fx:id="viewButton" text="View" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0"
+                    prefWidth="100.0" onAction="#buttonPressed"/>
+            <Button fx:id="viewButton" text="View" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0"
                     onAction="#buttonPressed"/>
-            <Button fx:id="joinButton" text="JoinTable" mnemonicParsing="false" prefHeight="25.0"
-                    prefWidth="75.0" onAction="#buttonPressed"/>
+            <Button fx:id="searchButton" text="Search" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0"
+                    onAction="#buttonPressed"/>
+            <Button fx:id="OrderBtn" text="Order Products" mnemonicParsing="false" prefHeight="25.0"
+                    prefWidth="100.0" onAction="#buttonPressed"/>
         </TilePane>
     </VBox>
 </AnchorPane>

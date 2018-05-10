@@ -15,20 +15,21 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductController {
-
+public class ViewController {
     @FXML private Label titleLabel;
     @FXML private TableView tableView;
+
     private List<String> colListNames;
     private List<List<String>> data;
-    private String dbTableName = "Product";
+    private String dbTableName;
+    private Connection con;
 
     @FXML
     private void initialize(){
-        Connection con = Main.getCon();
+        con = Main.getCon();
         SQLQuery query = new SQLQuery();
-        this.dbTableName = "Product";
-        ResultSet rs = query.getResultSet(con,dbTableName);
+        this.dbTableName = "CustomerOrder";
+        ResultSet rs = query.getCustomerOrderResultSet(con);
         getAllData(rs);
     }
 
@@ -38,18 +39,6 @@ public class ProductController {
 
     public void setTitleLabel(Label titleLabel) {
         this.titleLabel = titleLabel;
-    }
-
-    public String getDbTableName() {
-        return dbTableName;
-    }
-
-    public void setDbTableName(String dbTableName) {
-        this.dbTableName = dbTableName;
-    }
-
-    public TableView getTableView() {
-        return tableView;
     }
 
     public void getAllData(ResultSet rs){

@@ -3,8 +3,10 @@ package classes;
 import java.util.ArrayList;
 
 public class Customer {
-    private String name;
-    private String address;
+
+    private String cNo;
+    private String fName;
+    private String lName;
     private ArrayList<ArrayList<Order>> order;
 
     //-----------------------------
@@ -16,12 +18,16 @@ public class Customer {
     //-----------------------------
     //      GETTERS
     //-----------------------------
-    public String getName() {
-        return this.name;
+    public String getCNo() {
+        return cNo;
     }
 
-    public String getAddress() {
-        return this.address;
+    public String getFName() {
+        return this.fName;
+    }
+
+    public String getLName() {
+        return this.lName;
     }
 
     public ArrayList<ArrayList<Order>> getOrder() {
@@ -31,12 +37,16 @@ public class Customer {
     //-----------------------------
     //      SETTERS
     //-----------------------------
-    public void setName(String name) {
-        this.name = name;
+    public void setCNo(String cNo) {
+        this.cNo = cNo;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setFName(String name) {
+        this.fName = name;
+    }
+
+    public void setLName(String address) {
+        this.lName = address;
     }
 
     public void setOrder(ArrayList<ArrayList<Order>> order) {
@@ -67,7 +77,7 @@ public class Customer {
     }
 
     public String toString(){
-        String str = String.format("Name: %s%nAddress: %s%n",this.name,this.address);
+        String str = String.format("Name: %s %s%n",this.fName,this.lName);
         int count = 1;
         for(ArrayList<Order> ao : this.order) {
             str += "Order " + count++ + "\n";

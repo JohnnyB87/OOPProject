@@ -16,12 +16,33 @@ public class SQLQuery {
         return str.substring(0,str.length()-1);
     }
 
-    public void deleteQuery(Connection con,String tableName, String accNo){
+    public ResultSet getResultSet(Connection con,String tableName){
         try {
-            //delete
-            String id = tableName.charAt(0) + "No";
+            Statement stmt = con.createStatement();
+            String select = String.format("Select * from %s",tableName);
+            return stmt.executeQuery(select);
+        }catch (Exception io) {
+            System.out.println("error" + io);
+        }
+        return null;
+    }
+
+    public ResultSet getCustomerOrderResultSet(Connection con){
+        try {
+            Statement stmt = con.createStatement();
+            String select = "select c.Cno, c.FirstName, c.LastName,co.Ono,o.Pno,o.Quantity " +
+                    "From customer c join customerorder co on c.Cno = co.Cno join orderdetail o on co.Ono = o.Ono";
+            return stmt.executeQuery(select);
+        }catch (Exception io) {
+            System.out.println("error" + io);
+        }
+        return null;
+    }
+
+    public void deleteQuery(Connection con,String tableName,String colName, String text){
+        try {
             Statement deleteStmt = con.createStatement();
-            String delete = String.format("Delete from %s where %s ='%s'",tableName , id, accNo);
+            String delete = String.format("Delete from %s where %s ='%s'",tableName , colName, text);
             deleteStmt.executeUpdate(delete);
             deleteStmt.close();
         }catch (Exception io) {
@@ -75,9 +96,9 @@ public class SQLQuery {
         try{
             String select = colNameSearch.equalsIgnoreCase("all") ?
                     "*" : String.format("%s.%s",tableName2, colNameSearch);
-            String no = tableName1.charAt(0)+"No";
-            String query = String.format("SELECT %s FROM %s INNER JOIN %s ON %s.%s=%s.%s where %s.%s='%s'"
-                    ,select, tableName2, tableName1, tableName2,no,tableName1,no,tableName1,no,colNameJoin);
+            String no = tableName2.charAt(0)+"No";
+            String query = String.format("SELECT %s FROM %s INNER JOIN %s ON %s.%s=%s.%s"
+                    ,select, tableName2, tableName1, tableName2,no,tableName1,no);
 
             System.out.println(query);
 

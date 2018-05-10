@@ -6,22 +6,21 @@ public class Product {
     //--------------------------
     private String name;
     private String description;
-    private double price;
-    private final int PRODUCTID;
-    private static int idCounter = 1;
+    private String price;
+    private String pNo;
 
     //--------------------------
     //  CONSTRUCTORS
     //--------------------------
     public Product(){
-        PRODUCTID = idCounter++;
+
     }
 
-    public Product(String name, String description, double price){
+    public Product(String pNo, String name, String description, String price){
+        this.pNo = pNo;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.PRODUCTID = Product.idCounter++;
     }
     //--------------------------
     //  GETTERS
@@ -34,12 +33,12 @@ public class Product {
         return this.description;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return this.price;
     }
 
-    public int getProductID() {
-        return PRODUCTID;
+    public String getpNo() {
+        return pNo;
     }
 
     //--------------------------
@@ -53,20 +52,20 @@ public class Product {
         this.description = description;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-
+    public void setPno(String pNo){ this.pNo = pNo; }
     //--------------------------
     //  EXTRA FUNCTIONALITY
     //--------------------------
     public String toString(){
         return String.format("Product name: %s%n" +
                 "Product Description: %s%n" +
-                "Product Price: %.2f%n" +
-                "Product ID: %d%n"
-                ,this.name, this.description, this.price, PRODUCTID);
+                "Product Price: %s%n" +
+                "Product ID: %s%n"
+                ,this.name, this.description, this.price, pNo);
     }
 
     public void print(){

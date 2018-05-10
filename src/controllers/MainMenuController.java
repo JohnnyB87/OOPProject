@@ -24,7 +24,9 @@ public class MainMenuController {
         Main.setButtonPressed(buttonPressed);
         FXMLLoader loader;
         System.out.println(buttonPressed);
-        if(!(buttonPressed.equalsIgnoreCase("joinTable"))){
+        if((buttonPressed.equalsIgnoreCase("Search"))){}
+        else if((buttonPressed.equalsIgnoreCase("Order Products"))){}
+        else{
             loader = new FXMLLoader(getClass().getResource("../resources/SecondMenuWindow.fxml"));
             this.pane = loader.load();
             SecondMenuController addMenu = loader.getController();
@@ -32,12 +34,11 @@ public class MainMenuController {
             addMenu.setMenuName(buttonPressed);
             width = 350;
             height = 300;
-        }
-        else{
-            width = 500;
-            height = 400;
-            loader = new FXMLLoader(getClass().getResource("../resources/JoinTableWindow.fxml"));
-            this.pane = loader.load();
+
+            if((buttonPressed.equalsIgnoreCase("view"))) {
+                addMenu.setPhoneButtonText("Product");
+                addMenu.setTVButtonText("Order");
+            }
         }
         createNewStage(buttonPressed);
     }

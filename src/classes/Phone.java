@@ -6,7 +6,7 @@ public class Phone extends Product{
     //--------------------------
     private String make;
     private String model;
-    private int storageGB;
+    private String storageGB;
 
     //--------------------------
     //  CONSTRUCTORS
@@ -15,8 +15,8 @@ public class Phone extends Product{
         super();
     }
 
-    public Phone(String name, String description, double price, String make, String model, int storage){
-        super(name, description, price);
+    public Phone(String pNo, String name, String description, String price, String make, String model, String storage){
+        super(pNo, name, description, price);
         this.make = make;
         this.model = model;
         this.storageGB = storage;
@@ -32,7 +32,7 @@ public class Phone extends Product{
         return model;
     }
 
-    public int getStorageGB() {
+    public String getStorageGB() {
         return storageGB;
     }
     //--------------------------
@@ -46,7 +46,7 @@ public class Phone extends Product{
         this.model = model;
     }
 
-    public void setStorageGB(int storageGB) {
+    public void setStorageGB(String storageGB) {
         this.storageGB = storageGB;
     }
 
@@ -56,7 +56,7 @@ public class Phone extends Product{
     public String toString(){
         return String.format("%sProduct Make: %s%n" +
                         "Product Model: %s%n" +
-                        "Product Storage: %dGB%n"
+                        "Product Storage: %sGB%n"
                 ,super.toString(), this.make, this.model, this.storageGB);
     }
 

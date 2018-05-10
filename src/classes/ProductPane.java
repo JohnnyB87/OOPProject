@@ -8,10 +8,14 @@ import javafx.scene.layout.Pane;
 
 public class ProductPane extends Pane {
 
+    private TextField nameTxtFld ;
+    private TextField priceTxtFld ;
+    private TextField desTxtFld ;
+
     public ProductPane() {
-        TextField nameTxtFld = new TextField();
-        TextField priceTxtFld = new TextField();
-        TextField desTxtFld = new TextField();
+        nameTxtFld = new TextField();
+        priceTxtFld = new TextField();
+        desTxtFld = new TextField();
 
         setLocation(nameTxtFld, 194, 0);
         setLocation(priceTxtFld, 194, 30);
@@ -32,4 +36,36 @@ public class ProductPane extends Pane {
         txt.setLayoutX(X);
         txt.setLayoutY(Y);
     }
+
+    //------------------------
+    //      GETTERS
+    //------------------------
+    public TextField getNameTxtFld() {
+        return nameTxtFld;
+    }
+
+    public TextField getPriceTxtFld() {
+        return priceTxtFld;
+    }
+
+    public TextField getDesTxtFld() {
+        return desTxtFld;
+    }
+
+    //------------------------
+    //      SETTERS
+    //------------------------
+
+    public void setNameTxtFld(TextField nameTxtFld) {
+        this.nameTxtFld = nameTxtFld;
+    }
+
+    public void setPriceTxtFld(TextField priceTxtFld) {
+        this.priceTxtFld = priceTxtFld;
+    }
+
+    public void setDesTxtFld(TextField desTxtFld) {
+        this.desTxtFld = desTxtFld;
+    }
+
 }

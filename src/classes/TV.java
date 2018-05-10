@@ -5,10 +5,9 @@ public class TV extends Product{
     //  ATTRIBUTES
     //--------------------------
     private String make;
-    private int screenSize;
+    private String screenSize;
     private String type;
-    private boolean is3DCapable;
-    //private final String[] TVTYPES = {"LED","Plasma","LCD"};
+    private String is3DCapable;
 
     //--------------------------
     //  CONSTRUCTORS
@@ -18,8 +17,8 @@ public class TV extends Product{
         super();
     }
 
-    public TV(String name, String description, double price, String make, int screenSize, String type, boolean is3dCapable){
-        super(name, description, price);
+    public TV(String pNo, String name, String description, String price, String make, String screenSize, String type, String is3dCapable){
+        super(pNo, name, description, price);
         this.make = make;
         this.screenSize = screenSize;
         this.type = type;
@@ -33,7 +32,7 @@ public class TV extends Product{
         return make;
     }
 
-    public int getScreenSize() {
+    public String getScreenSize() {
         return screenSize;
     }
 
@@ -41,7 +40,7 @@ public class TV extends Product{
         return type;
     }
 
-    public boolean is3DCapable() {
+    public String is3DCapable() {
         return is3DCapable;
     }
 
@@ -53,7 +52,7 @@ public class TV extends Product{
         this.make = make;
     }
 
-    public void setScreenSize(int screenSize) {
+    public void setScreenSize(String screenSize) {
         this.screenSize = screenSize;
     }
 
@@ -61,7 +60,7 @@ public class TV extends Product{
         this.type = type;
     }
 
-    public void setIs3DCapable(boolean is3DCapable) {
+    public void setIs3DCapable(String is3DCapable) {
         this.is3DCapable = is3DCapable;
     }
 
@@ -70,7 +69,7 @@ public class TV extends Product{
     //--------------------------
     public String toString(){
         return String.format("%sProduct Make: %s%n" +
-                        "Product Screen Size: %d%n" +
+                        "Product Screen Size: %s%n" +
                         "Product Type: %s%n" +
                         "Product is 3D capable: %b%n"
                 ,super.toString(), this.make, this.screenSize, this.type,this.is3DCapable);
