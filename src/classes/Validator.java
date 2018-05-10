@@ -48,11 +48,11 @@ public class Validator {
         return null;
     }
 
-    public String getNumber(Connection con, String table){
+    public String getNumber(Connection con, String table, String car){
         String str;
         int start = 0;
         Statement s;
-        String car = table.substring(0,1).toUpperCase();
+//        String car = table.substring(0,1).toUpperCase();
         String col = String.format("%sno",car);
         try {
             s = con.createStatement();

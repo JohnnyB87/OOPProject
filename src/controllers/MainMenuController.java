@@ -23,9 +23,20 @@ public class MainMenuController {
         String buttonPressed = b.getText();
         Main.setButtonPressed(buttonPressed);
         FXMLLoader loader;
-        System.out.println(buttonPressed);
-        if((buttonPressed.equalsIgnoreCase("Search"))){}
-        else if((buttonPressed.equalsIgnoreCase("Order Products"))){}
+        if((buttonPressed.equalsIgnoreCase("Search"))){
+            loader = new FXMLLoader(getClass().getResource("../resources/SearchWindow.fxml"));
+            this.pane = loader.load();
+            SearchController s = loader.getController();
+            width = 350;
+            height = 300;
+        }
+        else if((buttonPressed.equalsIgnoreCase("Order Products"))){
+            loader = new FXMLLoader(getClass().getResource("../resources/add/OrderWindow.fxml"));
+            this.pane = loader.load();
+            OrderController o = loader.getController();
+            width = 350;
+            height = 300;
+        }
         else{
             loader = new FXMLLoader(getClass().getResource("../resources/SecondMenuWindow.fxml"));
             this.pane = loader.load();

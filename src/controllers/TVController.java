@@ -72,7 +72,7 @@ public class TVController extends ProductController{
 
     private void getWindowDetails(){
         validator.setCont(true);
-        this.tv.setPno(validator.getNumber(con, "Product"));
+        this.tv.setPNo(validator.getNumber(con, "Product","p"));
         this.tv.setName(validator.validateTextFieldInputString(superPane.getNameTxtFld().getText()));
         this.tv.setPrice(validator.validateTextFieldInputDouble(superPane.getPriceTxtFld().getText()));
         this.tv.setDescription(validator.validateTextFieldInputString(superPane.getDesTxtFld().getText()));
@@ -87,9 +87,9 @@ public class TVController extends ProductController{
         getWindowDetails();
         if (validator.isCont()) {
             SQLQuery insert = new SQLQuery();
-            insert.insertQuery(con,"product",tv.getpNo(),tv.getName(),
+            insert.insertQuery(con,"product",tv.getPNo(),tv.getName(),
                     tv.getDescription(), tv.getPrice());
-            insert.insertQuery(con, this.dbTableName, tv.getpNo(),tv.getMake(),
+            insert.insertQuery(con, this.dbTableName, tv.getPNo(),tv.getMake(),
                     tv.getType(), tv.getScreenSize(), tv.is3DCapable());
         }
         else{

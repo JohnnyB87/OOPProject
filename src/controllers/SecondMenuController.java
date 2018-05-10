@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -21,8 +22,13 @@ public class SecondMenuController {
     private PaneFrame pane;
     private String menuName;
     private String buttonPressed;
+    private static Stage stage;
     private int width = 400;
     private int height = 350;
+
+    static Stage getStage(){
+        return stage;
+    }
 
     @FXML
     private void initialize(){
@@ -95,7 +101,7 @@ public class SecondMenuController {
         sp.getChildren().add(this.pane);
 
         Scene scene = new Scene(sp,width,height);
-        Stage stage = new Stage();
+        stage = new Stage();
 
         stage.initModality(Modality.WINDOW_MODAL);
         stage.setTitle(title);

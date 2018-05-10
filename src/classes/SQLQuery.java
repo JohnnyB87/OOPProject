@@ -27,6 +27,17 @@ public class SQLQuery {
         return null;
     }
 
+    public ResultSet getResultSetWhere(Connection con,String tableName, String colName, String where){
+        try {
+            Statement stmt = con.createStatement();
+            String select = String.format("Select * from %s where %s='%s'",tableName,colName,where);
+            return stmt.executeQuery(select);
+        }catch (Exception io) {
+            System.out.println("error" + io);
+        }
+        return null;
+    }
+
     public ResultSet getCustomerOrderResultSet(Connection con){
         try {
             Statement stmt = con.createStatement();

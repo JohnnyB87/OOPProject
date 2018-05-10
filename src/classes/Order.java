@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Order {
 
-
+    private String oNo;
+    private String cNo;
     private ArrayList<OrderDetails> od;
 
     //-----------------------------
@@ -14,6 +15,11 @@ public class Order {
         this.od = new ArrayList<>();
     }
 
+    public Order(String oNo, String cNo){
+        this.oNo = oNo;
+        this.cNo = cNo;
+        this.od = new ArrayList<>();
+    }
 
     //-----------------------------
     //      GETTERS
@@ -22,6 +28,13 @@ public class Order {
         return this.od;
     }
 
+    public String getONo() {
+        return oNo;
+    }
+
+    public String getCNo() {
+        return cNo;
+    }
     //-----------------------------
     //      SETTERS
     //-----------------------------
@@ -29,6 +42,13 @@ public class Order {
         this.od = od;
     }
 
+    public void setONo(String oNo) {
+        this.oNo = oNo;
+    }
+
+    public void setCNo(String cNo) {
+        this.cNo = cNo;
+    }
     //-----------------------------
     //      METHODS
     //-----------------------------

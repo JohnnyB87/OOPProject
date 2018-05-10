@@ -97,7 +97,7 @@ public class PhoneController extends ProductController{
 
     private void getWindowDetails(){
         validator.setCont(true);
-        this.phone.setPno(validator.getNumber(con, "Product"));
+        this.phone.setPNo(validator.getNumber(con, "Product", "p"));
         this.phone.setName(validator.validateTextFieldInputString(superPane.getNameTxtFld().getText()));
         this.phone.setPrice(validator.validateTextFieldInputDouble(superPane.getPriceTxtFld().getText()));
         this.phone.setDescription(validator.validateTextFieldInputString(superPane.getDesTxtFld().getText()));
@@ -110,9 +110,9 @@ public class PhoneController extends ProductController{
         getWindowDetails();
         if (validator.isCont()) {
             SQLQuery insert = new SQLQuery();
-            insert.insertQuery(con,"product",phone.getpNo(),phone.getName(),
+            insert.insertQuery(con,"product",phone.getPNo(),phone.getName(),
                     phone.getDescription(), phone.getPrice());
-            insert.insertQuery(con, this.dbTableName, phone.getpNo(),phone.getMake(),
+            insert.insertQuery(con, this.dbTableName, phone.getPNo(),phone.getMake(),
                     phone.getModel(),phone.getStorageGB());
         }
         else{

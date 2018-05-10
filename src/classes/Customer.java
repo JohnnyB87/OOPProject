@@ -64,18 +64,6 @@ public class Customer {
         return counter;
     }
 
-    public void add(Order o){
-        int size = o.getOd().size();
-        ArrayList<Order> newOrder = new ArrayList<>();
-        for(int i=0; i<size; i++){
-            OrderDetails od = new OrderDetails(o.get(i).getProduct(),o.get(i).getQuantity());
-            Order newO = new Order();
-            newO.add(od.getProduct(), od.getQuantity());
-            newOrder.add(newO);
-        }
-        this.order.add(newOrder);
-    }
-
     public String toString(){
         String str = String.format("Name: %s %s%n",this.fName,this.lName);
         int count = 1;

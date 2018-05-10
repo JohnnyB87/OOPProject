@@ -4,15 +4,17 @@ public class OrderDetails {
 
     private Product product;
     private int quantity;
+    private String oNo;
 
     //-----------------------------
     //      CONSTRUCTORS
     //-----------------------------
     public OrderDetails(){}
 
-    public OrderDetails(Product p, int q){
+    public OrderDetails(Product p, int q, String oNo){
         this.product = p;
         this.quantity = q;
+        this.oNo = oNo;
     }
     //-----------------------------
     //      GETTERS
@@ -25,6 +27,10 @@ public class OrderDetails {
         return this.product;
     }
 
+    public String getONo() {
+        return oNo;
+    }
+
     //-----------------------------
     //      SETTERS
     //-----------------------------
@@ -34,6 +40,10 @@ public class OrderDetails {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public void setONo(String oNo) {
+        this.oNo = oNo;
     }
 
     //-----------------------------
@@ -48,4 +58,6 @@ public class OrderDetails {
     public void print(){
         System.out.println(this.toString());
     }
+
+
 }

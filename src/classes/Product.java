@@ -37,7 +37,7 @@ public class Product {
         return this.price;
     }
 
-    public String getpNo() {
+    public String getPNo() {
         return pNo;
     }
 
@@ -56,7 +56,7 @@ public class Product {
         this.price = price;
     }
 
-    public void setPno(String pNo){ this.pNo = pNo; }
+    public void setPNo(String pNo){ this.pNo = pNo; }
     //--------------------------
     //  EXTRA FUNCTIONALITY
     //--------------------------
