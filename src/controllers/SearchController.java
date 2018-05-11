@@ -23,11 +23,9 @@ public class SearchController {
     @FXML private TableColumn<Product, String> pPriceCol;
     @FXML private ComboBox<String> searchBox;
     @FXML private PaneFrame paneFrame;
-    @FXML private Label titleLabel;
     @FXML private TableView<Product> tableView;
 
     private Connection con;
-    private Product product;
     private Validator validator;
     private String pNo;
 

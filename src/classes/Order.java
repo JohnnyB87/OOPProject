@@ -24,10 +24,6 @@ public class Order {
     //-----------------------------
     //      GETTERS
     //-----------------------------
-    public ArrayList<OrderDetails> getOd() {
-        return this.od;
-    }
-
     public String getONo() {
         return oNo;
     }
@@ -38,10 +34,6 @@ public class Order {
     //-----------------------------
     //      SETTERS
     //-----------------------------
-    public void setOd(ArrayList<OrderDetails> od) {
-        this.od = od;
-    }
-
     public void setONo(String oNo) {
         this.oNo = oNo;
     }

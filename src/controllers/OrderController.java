@@ -72,14 +72,13 @@ public class OrderController {
 
     private void addProductToOrderDetails(){
         Product p = new Product();
-        SQLQuery query = new SQLQuery();
         p.setPNo(pNo);
         orderDetails.setProduct(p);
     }
 
     private void addCustomerToDB(){
         SQLQuery query = new SQLQuery();
-        query.insertQuery(con, "customer",customer.getCNo(),customer.getFName(),customer.getFName());
+        query.insertQuery(con, "customer",customer.getCNo(),customer.getFName(),customer.getLName());
     }
 
     private void addOrderToDB(){

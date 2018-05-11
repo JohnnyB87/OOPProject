@@ -21,14 +21,11 @@ public class ViewController {
 
     private List<String> colListNames;
     private List<List<String>> data;
-    private String dbTableName;
-    private Connection con;
 
     @FXML
     private void initialize(){
-        con = Main.getCon();
+        Connection con = Main.getCon();
         SQLQuery query = new SQLQuery();
-        this.dbTableName = "CustomerOrder";
         ResultSet rs = query.getCustomerOrderResultSet(con);
         getAllData(rs);
     }

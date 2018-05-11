@@ -27,17 +27,6 @@ public class SQLQuery {
         return null;
     }
 
-    public ResultSet getResultSetWhere(Connection con,String tableName, String colName, String where){
-        try {
-            Statement stmt = con.createStatement();
-            String select = String.format("Select * from %s where %s='%s'",tableName,colName,where);
-            return stmt.executeQuery(select);
-        }catch (Exception io) {
-            System.out.println("error" + io);
-        }
-        return null;
-    }
-
     public ResultSet getCustomerOrderResultSet(Connection con){
         try {
             Statement stmt = con.createStatement();
@@ -110,8 +99,6 @@ public class SQLQuery {
             String no = tableName2.charAt(0)+"No";
             String query = String.format("SELECT %s FROM %s INNER JOIN %s ON %s.%s=%s.%s"
                     ,select, tableName2, tableName1, tableName2,no,tableName1,no);
-
-            System.out.println(query);
 
             Statement stmt = con.createStatement();
             rs = stmt.executeQuery(query);

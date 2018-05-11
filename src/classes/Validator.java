@@ -61,7 +61,6 @@ public class Validator {
             {
                 str = rs.getString (col);
                 int n = Integer.parseInt(str.substring(1));
-                System.out.println(n);
                 if(start <= n)
                     start = n + 1;
             }

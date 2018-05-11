@@ -1,15 +1,10 @@
 package controllers;
 
 import classes.*;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class PhoneController extends ProductController{
 
@@ -28,7 +23,6 @@ public class PhoneController extends ProductController{
 
     @FXML
     private void initialize(){
-//        this.getAllData();
         if(this.paneFrame !=  null) {
             Button confirmButton = this.paneFrame.getConfirmButton();
             String action =  Main.getButtonPressed();
@@ -43,7 +37,6 @@ public class PhoneController extends ProductController{
                 SQLQuery join = new SQLQuery();
                 ResultSet rs = join.joinQuery(con,dbTableName, "product" ,"pno","all");
                 getAllData(rs);
-//                tableView = super.getTableView();
                 this.tableView.setEditable(true);
                 confirmButton.setOnAction(e -> deleteButtonPressed());
             }
@@ -60,35 +53,11 @@ public class PhoneController extends ProductController{
         return titleLabel;
     }
 
-    public TextField getPhoneMake() {
-        return phoneMake;
-    }
-
-    public TextField getPhoneModel() {
-        return phoneModel;
-    }
-
-    public ComboBox<String> getPhoneSizeGB() {
-        return phoneSizeGB;
-    }
-
     //---------------------------
     //      SETTERS
     //---------------------------
     public void setTitleLabel(Label titleLabel) {
         this.titleLabel = titleLabel;
-    }
-
-    public void setPhoneMake(TextField phoneMake) {
-        this.phoneMake = phoneMake;
-    }
-
-    public void setPhoneModel(TextField phoneModel) {
-        this.phoneModel = phoneModel;
-    }
-
-    public void setPhoneSizeGB(ComboBox<String> phoneSizeGB) {
-        this.phoneSizeGB = phoneSizeGB;
     }
 
     //---------------------------

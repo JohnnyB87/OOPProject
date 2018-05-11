@@ -933,13 +933,13 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="232" name="FirstName">
+    <column id="239" parent="232" name="firstName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="232" name="LastName">
+    <column id="240" parent="232" name="lastName">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
@@ -993,23 +993,23 @@
       <DataType>int(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="250" parent="234" name="Pno">
-      <ColNames>Pno</ColNames>
+    <index id="250" parent="234" name="Ono">
+      <ColNames>Ono</ColNames>
       <Type>btree</Type>
     </index>
     <key id="251" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>Ono
-Pno</ColNames>
+      <ColNames>Pno
+Ono</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="252" parent="234" name="orderdetail_ibfk_1">
+    <foreign-key id="252" parent="234" name="orderdetail_ibfk_2">
       <ColNames>Ono</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>customerorder</RefTableName>
       <RefColNames>Ono</RefColNames>
     </foreign-key>
-    <foreign-key id="253" parent="234" name="orderdetail_ibfk_2">
+    <foreign-key id="253" parent="234" name="orderdetail_ibfk_1">
       <ColNames>Pno</ColNames>
       <RefSchemaName>store</RefSchemaName>
       <RefTableName>product</RefTableName>
@@ -1018,6 +1018,7 @@ Pno</ColNames>
     <column id="254" parent="235" name="Pno">
       <Position>1</Position>
       <DataType>varchar(5)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="255" parent="235" name="Make">
@@ -1060,7 +1061,7 @@ Pno</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="236" name="Description">
+    <column id="262" parent="236" name="Descriptioin">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1080,6 +1081,7 @@ Pno</ColNames>
     <column id="265" parent="237" name="Pno">
       <Position>1</Position>
       <DataType>varchar(5)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="266" parent="237" name="Make">

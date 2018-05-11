@@ -40,7 +40,7 @@ public class ProductController {
         this.titleLabel = titleLabel;
     }
 
-    public String getDbTableName() {
+    String getDbTableName() {
         return dbTableName;
     }
 
@@ -52,7 +52,7 @@ public class ProductController {
         return tableView;
     }
 
-    public void getAllData(ResultSet rs){
+    void getAllData(ResultSet rs){
         this.tableView.getColumns().clear();
         this.colListNames = new ArrayList<>();
         this.data = new ArrayList<>();

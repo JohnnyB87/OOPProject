@@ -27,10 +27,6 @@ public class OrderDetails {
         return this.product;
     }
 
-    public String getONo() {
-        return oNo;
-    }
-
     //-----------------------------
     //      SETTERS
     //-----------------------------

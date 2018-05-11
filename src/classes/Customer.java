@@ -13,7 +13,7 @@ public class Customer {
     //      CONSTRUCTORS
     //-----------------------------
     public Customer(){
-        this.order = new ArrayList<ArrayList<Order>>();
+        this.order = new ArrayList<>();
     }
     //-----------------------------
     //      GETTERS
@@ -30,10 +30,6 @@ public class Customer {
         return this.lName;
     }
 
-    public ArrayList<ArrayList<Order>> getOrder() {
-        return this.order;
-    }
-
     //-----------------------------
     //      SETTERS
     //-----------------------------
@@ -47,10 +43,6 @@ public class Customer {
 
     public void setLName(String address) {
         this.lName = address;
-    }
-
-    public void setOrder(ArrayList<ArrayList<Order>> order) {
-        this.order = order;
     }
 
     //-----------------------------

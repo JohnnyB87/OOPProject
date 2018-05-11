@@ -26,14 +26,12 @@ public class MainMenuController {
         if((buttonPressed.equalsIgnoreCase("Search"))){
             loader = new FXMLLoader(getClass().getResource("../resources/SearchWindow.fxml"));
             this.pane = loader.load();
-            SearchController s = loader.getController();
             width = 350;
             height = 300;
         }
         else if((buttonPressed.equalsIgnoreCase("Order Products"))){
             loader = new FXMLLoader(getClass().getResource("../resources/add/OrderWindow.fxml"));
             this.pane = loader.load();
-            OrderController o = loader.getController();
             width = 350;
             height = 300;
         }
