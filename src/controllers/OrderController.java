@@ -43,6 +43,7 @@ public class OrderController {
 
     private void validateInput(){
         validator.setCont(true);
+        customer.setCNo(null);
         addCustomer = false;
         orderDetails.setQuantity(Integer.parseInt(validator.validateTextFieldInputInt(quantityTxtFld.getText())));
         pNo = checkComboBox(this.productNoComboBox);
@@ -64,8 +65,8 @@ public class OrderController {
             addProductToOrderDetails();
             if(addCustomer)
                 addCustomerToDB();
-                addOrderToDB();
-                addOrderDetailsToDB();
+            addOrderToDB();
+            addOrderDetailsToDB();
         }
 
     }
